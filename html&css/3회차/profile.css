@@ -1,0 +1,38 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: #b3a194
+}
+
+body{
+    width: 640px;
+    margin: auto;  /* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1{
+    font-size: 48px;
+}
+
+
+img{
+    width: 300px;
+    height: 260px;
+    border-radius: 100px;
+}
+
+p{
+    font-size: 1.2rem;
+}
+
+p#fun_facts{
+    color: rgb(21, 0, 255);
+    opacity: 0.5;
+}
+
+div{
+    font-family: "Nanum Brush Script", monospace;
+    font-size: 24px;
+}
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 선택자 알아보기 </title>
+         <style>
+            /*
+            기호와 함께 사용하는 속성 선택자
+            * : 값의 포함 여부
+            ^ : 값의 시작 여부
+            $ : 값의 끝 여부
+            */
+
+
+         img[width *= "0"]{
+            border: 5px dashed red;
+         }
+
+         body p{
+            color: blue;
+         }
+
+         p > em{
+            color: red;
+         }
+
+         #sam + p{
+            color: orange;
+         }
+        
+         /* 
+         모든 형제 다 적용한다.
+         #sam ~ p{
+            color: orange;
+         }
+        
+         형제 선택자는 뒤이어 등장하는 형제들을 대상으로 한다.
+        */
+
+         </style>
+    </head>
+
+    <body>
+        <img src="../1회차/images/common.jpeg" width="180" alt="seaside">
+        <img src="../1회차/images/common.jpeg" width="180">
+        <img src="../1회차/images/common.jpeg" width="180" id="sam">
+        <p>바닷가에 가서 일몰 보는 것을 좋아합니다.</p>
+        <p>마음의 평화를 느낄 수 있기 때문입니다.</p>
+        <p>하지만 <em>오션뷰 별장</em>에서 오래 살면 사람이 우울해질 수도 있다고 합니다.</p>
+        <p>오션뷰 바캉스는 그래도 좋은 선택인 것 같습니다.</p>
+
+    </body>
+ </html>

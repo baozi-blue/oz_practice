@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 색상을 지정하는 다양한 방법 </title>
+         <style>
+            p#one{
+              color: rgb(100%, 0%, 100%);
+              opacity: 0.5;
+            }
+            
+            p#two{
+              color: rgb(100%, 0%, 100%, 0.5);               
+            }
+            
+            p#three{
+              color: hsl(300, 50% ,30%);           
+            }
+
+            p#four{
+              color: #FF00FFFF
+                /*
+                0 1 2 3 4 5 6 7 8 9 A B C D E F
+                10 11 12 13 14
+                00 ~ FF : 255
+                */
+                            
+            }
+         </style>
+    </head>
+
+    <body>
+    <p id="one">call me by your name</p>     
+    <p id="two">call me by your name</p>    
+    <p id="three">call me by your name</p>    
+    <p id="four">call me by your name</p>    
+
+    </body>
+ </html>

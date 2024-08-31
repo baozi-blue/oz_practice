@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> DOM 소개 & 콘텐츠 변경하기 </title>
+    </head>
+
+    <body>
+     
+            <p>i dont know what am i typing this is first line</p>
+            <p class = "comment">well, you did a good job!</p>
+            <p class = "comment" id="goal">so proud of you</p>
+
+            <script>
+                //입력 - 처리 - 출력
+                const p1 = window.document.querySelector("p")
+                const p2 = window.document.querySelector(".comment")
+                const p3 = window.document.querySelector("#goal")
+
+                console.log(p1.textContent)
+                console.log(p2.textContent)
+                console.log(p3.textContent)
+
+                p1.textContent = "now i am typing another sentence!!"
+                p2.textContent = "not bad"
+                p3.textContent = "keep doing it"
+
+            </script>
+        
+    </body>
+ </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 인수 & 변화 </title>
+    </head>
+
+    <body>
+        <div id="container"></div>
+
+      <script>
+
+        console.log(createParagragh("첫번째 문구, 와우!", "red"))
+        console.log(createParagragh("두번재 문구도 여기!", "blue"))
+        console.log(createParagragh("셋번째도 잊지 말라고!", "yellow"))
+
+        function createParagragh(content, color){
+            const p = document.createElement("p")
+            p.style.color = color
+            p.textContent = content
+            document.querySelector("#container").append(p)
+
+            return `방금 만든 태그의 콘텐츠 : ${content}, 색상: ${color}`
+        }
+
+
+        /*
+            function sample(){
+                console.log("변환기능 테스트")
+                return "짜짠!"
+            }
+
+            console.log(sample())
+        */
+
+
+
+      </script>
+        
+    </body>
+ </html>

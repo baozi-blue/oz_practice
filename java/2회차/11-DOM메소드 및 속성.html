@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> DOM 메소드 & 속성 </title>
+    </head>
+
+    <body>
+      <h1 id="song-title" class="heading text" title="JustinBieber Song">
+        <span>One Life</span>
+      </h1>
+      <p class="lyrics">
+        I wanna sleep where you sleep, dream what you dream.
+      </p>
+      <p class="lyrics">
+        It's only one life, and I only wanna live it with you.
+      </p>
+      <script>
+        console.log(document.querySelectorAll(".lyrics"))
+        console.log(
+        document.getElementsByClassName("lyrics")
+        )
+        const title = document.getElementById("song-title")
+        console.log(title)
+
+        console.log(title.textContent)
+        console.log(title.innerText)
+        //위 두가지 코드는 공백의 차이 있음
+
+        console.log(title.className)
+        console.log(title.style)
+        console.log(title.title)
+
+
+
+
+      </script>
+        
+    </body>
+ </html>

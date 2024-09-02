@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 몬스터 잡기 게임 </title>
+    </head>
+
+    <body>
+        <div id="container"></div>
+
+      <script>
+        let monsterHP = 100
+        const container = document.getElementById("container")
+        const h1 = document.createElement("h1")
+        h1.textContent = "Let's beat the monster!"
+        container.appendChild(h1)
+
+        let attackDamage = parseInt(prompt("Please enter your attack damage (positive integer)"))
+        let attackCount = 0
+
+        if(attackDamage > 0){
+            
+            while(monsterHP > 0){
+                monsterHP -= attackDamage 
+                attackCount += 1 
+          
+                const p = document.createElement("p")
+                p.textContent = `Monster Attack No. ${attackCount}`
+                container.append(p)
+
+                const strong = document.createElement("strong")
+                strong.textContent = `Moster HP left : ${monsterHP}`
+                container.append(strong)
+                
+            }
+               
+
+                /*  ?????
+                if(monsterHP < 0){
+                    const defeated = document.createElement("defeated")
+                    defeated.textContent = `Moster HP left : 0`
+                    container.append(defeated)
+                }
+
+            let currentHP = HP < 50 ? "50보다 작음" : "50은 넘음"
+
+                */
+            
+
+            const h2 = document.createElement("h2")
+            h2.textContent = "Monster Defeated. End of the Game."
+            h2.style.color = "orange"
+            h2.title = "Please refresh to restart the game."
+            container.appendChild(h2)
+            
+        }else{
+            alert("wrong damage setting!")
+        }
+
+
+      </script>
+        
+    </body>
+ </html>

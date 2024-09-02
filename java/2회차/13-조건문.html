@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 조건문 </title>
+    </head>
+
+    <body>
+        <h1></h1>
+        <p></p>
+
+      <script>
+        const h1 = document.querySelector('h1')
+        const p = document.querySelector('p')
+
+        const isThere = confirm("Show the title?")
+
+
+        if(isThere){
+            h1.textContent = "the fee you need to pay is"
+        }
+
+        const age = parseInt(prompt("what is your age?"))
+        if(age >= 20){
+            p.textContent = "USD 2.00"
+        }else if(age >= 8){
+            p.textContent = "USD 1.00"
+        }else{
+            p.textContent = "free of charge"
+        }
+
+
+      </script>
+        
+    </body>
+ </html>

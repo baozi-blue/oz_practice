@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko" data-bs-theme="dark">
+<head>
+    <title>Admin Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+      th, td{
+          text-align: center;
+      }
+    </style>
+
+  </head>
+<body>   
+		<div class="cot-3">
+        <h3 class="mt-5 mb-3">신규 등록 상품</h3>
+        <form class="row row-cols-lg-auto g-3 align-items-center">      
+            <div class="col-12">
+              <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+              <select class="form-select1" id="inlineFormSelectPref">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+
+                      <option selected>카테고리 선택</option>
+                      <option value="top">상의</option>
+                      <option value="bottom">하의</option>
+                      <option value="shoes">신발</option>
+                      <option value="fashion-goods">패션잡화</option>
+
+              </select>
+              <select class="form-select2" id="inlineFormSelectPref">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+
+                      <option selected>성별 선택</option>
+                      <option value="male">남자</option>
+                      <option value="female">여자</option>
+
+
+              </select>
+            </div>
+            <div class="col-3">
+                <!-- input 입력창 코드를 넣어주세요 -->
+                <input 
+                type="text" 
+                class="form-control" 
+                placeholder="상품명을 입력하세요" 
+                aria-label="Example text with button addon" 
+                aria-describedby="button-addon1">
+
+
+            </div>
+            <div class="col-auto">
+                <!-- 조회버튼 코드를 넣어주세요 -->
+                <button 
+                class="btn btn-outline-secondary" 
+                type="button" 
+                id="button-addon1">조회</button>
+
+
+            </div>
+          </form>
+          <div class="container mt-3">
+            <table class="table table-sm">
+            <thead>
+                <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+              <tr>
+                <th scope="col">카테고리</th>
+                <th scope="col">브랜드</th>
+                <th scope="col">상품명</th>
+                <th scope="col">판매가(원)</th>
+              </tr>
+            </thead>
+            <tbody id="data-table">
+                 <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+
+            </tbody>
+          </table>
+
+
+	    </div>
+    </div>
+
+
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+
+      
+
+
+   <script>
+      // 크롤링한 데이터를 아래와 같은 형태의 객체 배열로 가정합니다.
+      // 추후 데이터베이스에 있는 데이터를 쿼리문으로 불러 올 수 있게 쿼리르 작성해 볼 수 있음
+      const data = [
+          { category: "상의", brand: 'Adidas', product: 'didas Waffle Beckenbauer Track Top Wonder White - KR Sizing', price: '178,000' },
+          { category: "신발", brand: 'Jordan', product: 'Jordan 11 Retro Low Diffused Blue', price: '222,000' },
+          { category: "하의", brand: 'OY', product: 'OY Logo Eight Pocket Denim Baggy Pants Washed Black', price: '129,270' },
+          { category: "신발", brand: 'Nike', product: 'Nike Shox R4 Black and Metallic Silver', price: '211,000' },
+          { category: "신발", brand: 'Nike', product: 'Nike x Supreme Air Force 1 Mid White', price: '181,000' },
+          { category: "패션잡화", brand: 'Pokemon', product: 'Pokemon Summer Ice Tumbler', price: '24,000' },
+          { category: "신발", brand: 'Nike', product: 'Nike x Peaceminusone Air Force 1 Low Para-Noise 3.0 Black and Multicolor', price: '350,000' },
+          { category: "신발", brand: 'Puma', product: 'Puma Speedcat OG Puma Black Mauve Mist', price: '139,000' },
+          { category: "상의", brand: 'Martine Rose', product: 'Martine Rose Oversized S/S T-Shirt Black - 24FW', price: '335,700' },
+          { category: "신발", brand: 'Jordan', product: 'Jordan 1 Retro Low OG Mocha', price: '188,000' },
+          { category: "상의", brand: 'Sansan Gear', product: 'Sansan Gear Contrast Jacket Black', price: '179,000' },
+          { category: "하의", brand: 'VACANT ARCHIVE', product: 'Vacant Archive Unisex Nova Carpenter Pants Khaki', price: '159,600' },
+          { category: "하의", brand: 'Entire Studios', product: 'Entire Studios Heavy Gocar Military - 24FW', price: '365,000' },
+          { category: "상의", brand: 'KALA PATTHAR', product: 'KALA PATTHAR 3 Layer Hard Shell Mid-Jacket Black', price: '189,000' },
+          { category: "패션잡화", brand: 'Lumena', product: 'Lumena SPACE S Mood Light Sun Orange', price: '39,900' },
+      ];
+      
+      const dataTable = document.getElementById('data-table');
+      
+      data.forEach((item) => {
+          const row = dataTable.insertRow();
+          row.insertCell(0).innerHTML = item.category;
+          row.insertCell(1).innerHTML = item.brand;
+          row.insertCell(2).innerHTML = item.product;
+          row.insertCell(3).innerHTML = item.price;
+      });
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+
+
+</body>
+</html>

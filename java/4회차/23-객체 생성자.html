@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge"
+        >
+         <title> 객체 생성자 </title>
+    </head>
+
+    <body>
+
+      <script>
+        //함수인데 객체를 생성할 목적으로 정의하는 함수. 설계도 개념
+        //자바 스크립트에서 기본으로 제공하지 않은 데이터 유형을 직접 만들 수 있다.
+
+        function BestSinger(){
+            this.name = "jb"
+            this.member = "1, 2, 3"
+            this.singing = function(){
+                console.log("my house is made of glass")
+            }
+        }
+
+        const jb = BestSinger()
+        console.log(jb.name)
+        console.log(jb.member)
+        jb.singing()
+
+
+
+      </script>
+        
+    </body>
+ </html>
+
+

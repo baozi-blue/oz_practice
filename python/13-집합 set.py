@@ -57,9 +57,10 @@ set.difference(s3, s4)
 
 
 
+balance = 1000
+print(balance)
 
+deposit_1 = int(input())
+balance += deposit_1
 
-
-
-
-
+print(f'입출금: 입금, 입금금액 : {deposit_1}원, 잔액 : {balance}원')

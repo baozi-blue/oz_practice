@@ -62,3 +62,5 @@ set.difference(s3, s4)
 
 
 
+print(' * ', ' * ', ' * ', ' * ', ' * ', ' * ', sep='x')
+x, y = map(float, input('실수를 입력하세요: ').split())

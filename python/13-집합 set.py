@@ -58,9 +58,9 @@ set.difference(s3, s4)
 
 
 
+ozkim = { "국어" : 90, "수학" : 80, "과학" : 82, "영어" : 72 }
+result = sum(a) / len(a)
+a = list(map(int, ozkim.values()))
+b = list(ozkim.items())
 
-
-
-
-print(' * ', ' * ', ' * ', ' * ', ' * ', ' * ', sep='x')
-x, y = map(float, input('실수를 입력하세요: ').split())
+print(result)

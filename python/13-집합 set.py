@@ -55,12 +55,3 @@ set.intersection(s3, s4)
 set.difference(s3, s4)
 # >>> {'배추', '당근'} => '가지'는 ???
 
-
-
-
-ozkim = { "국어" : 90, "수학" : 80, "과학" : 82, "영어" : 72 }
-result = sum(a) / len(a)
-a = list(map(int, ozkim.values()))
-b = list(ozkim.items())
-
-print(result)

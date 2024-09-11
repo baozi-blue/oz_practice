@@ -11,6 +11,8 @@ bread_count = int(input("주문할 개수를 입력하세요"))
 order[bread_type] = bread_count
 print(f'주문내역: {order}')
 
+
+
 # 함수 - len(stock);  메소드 - stock.items()
 for bread, quantity in stock.items():
     print(f'{bread} : {quantity}')

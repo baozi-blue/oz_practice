@@ -4,6 +4,16 @@
 #2. 사용자로부터 입력을 받아 사용자 추가 및 찾기 기능을 제공합니다.
 #3. 사용자 메뉴를 통해 입금, 출금, 잔고 확인, 거래 내역 기능을 실행할 수 있도록 합니다.
 
+# 프로그램의 시작점으로 이해해야 함
+# VSC 디버깅 기능 활용, 코딩 유치원
+
+
+from models.user import User
+from models.transaction import Transaction
+from models.account import Account
+from services.banking_service import BankingService
+
+
 
 
 if __name__ == "__main__":

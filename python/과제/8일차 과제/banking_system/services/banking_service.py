@@ -13,20 +13,26 @@
 #- amount: 입금 또는 출금 금액을 나타내는 정수
 #- choice: 사용자의 선택을 나타내는 문자열
 
+
+from banking_system.models.user import User
+from banking_system.utils.exceptions import UserNotFoundError
+
 class BankingService:
-    def __init__(self):
+    def __init__(self) -> None:
         self.users = []
 
-    def add_user(self, user):
-        self.users.append(user)
+    def add_user(self, username: str) -> None:
+        self.users.append(User(username))
 
-    def find_user(self, username):
+    def find_user(self, username: str) -> None:
         for user in self.users:
             if user.username == username:
                 return user
-        return None
+        raise UserNotFoundError(username)
 
-    def user_menu(self):
+    def user_menu(self, username: str) -> None:
+        user = self.find_user(username)
+
         print("사용자 메뉴")
         print("1. 입금")
         print("2. 출금")
@@ -43,7 +49,7 @@ class BankingService:
                 amount = int(input("출금할 금액을 입력하세요: "))
                 user.account.withdraw(amount)
             elif choice == '3':
-                print(user.account.get_balance())
+                print(f'현재 잔액은: {user.account.get_balance()}원 입니다.')
             elif choice == '4':
                 print(user.account.get_transactions())
             elif choice == '5':

@@ -14,37 +14,45 @@
 #- bank_name: 은행 이름을 나타내는 클래스 변수 문자열
 #- amount: 입금 또는 출금 금액을 나타내는 정수
 
-class Account:
-    
-    __balance = []
-    trasactions = []
-    bank_name = "신한은행" 
+from banking_system.models.transaction import Transaction
+from banking_system.utils.decorators import validate_transaction
+from banking_system.utils.exceptions import InsufficientFundsError, NegativeAmountError
 
-    def __init__(self, __balance, transactions):
-        self.__balance = __balance
-        self.transactions = transactions
+class Account:
+    bank_name = "신한은행"
+
+    def __init__(self) -> None:
+        self.__balance = 1000
+        self.transactions = []
     
-    def deposit(self, amount):
+    @validate_transaction
+    def deposit(self, amount: int) -> None:
+        if amount <= 0:
+            raise NegativeAmountError()
         self.__balance += amount
         self.transactions.append(Transaction("deposit", amount, self.__balance))
     
-    def withdraw(self, amount):
-        if self.__balance >= amount:
-            self.__balance -= amount
-            self.transactions.append(Transaction("withdraw", amount, self.__balance))
-        else:
-            print("잔액이 부족합니다.")
-    
-    def get_balance(self):
+
+    @validate_transaction
+    def withdraw(self, amount: int) -> None:
+        if amount <= 0:
+            raise NegativeAmountError()
+        if amount > self.__balance:
+            raise InsufficientFundsError(self.__balance)
+        self.__balance -= amount
+        self.transactions.append(Transaction("출금", amount, self.__balance))
+
+
+    def get_balance(self) -> int:
         return self.__balance
     
-    def get_transactions(self):
+    def get_transactions(self) -> list:
         return self.transactions
     
     @classmethod
-    def get_bank_name(cls): 
+    def get_bank_name(cls) -> str: 
         return cls.bank_name
     
     @classmethod
-    def set_bank_name(cls, bank_name): 
-        cls.bank_name = bank_name
+    def set_bank_name(cls, name: str) -> None: 
+        cls.bank_name = name

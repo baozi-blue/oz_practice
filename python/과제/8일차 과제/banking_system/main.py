@@ -8,12 +8,13 @@
 # VSC 디버깅 기능 활용, 코딩 유치원
 
 
-from models.user import User
-from models.transaction import Transaction
-from models.account import Account
-from services.banking_service import BankingService
+import sys
+import os
 
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
+from banking_system.services.banking_service import BankingService
+from banking_system.utils.exceptions import InsufficientFundsError, NegativeAmountError, UserNotFoundError
 
 
 if __name__ == "__main__":

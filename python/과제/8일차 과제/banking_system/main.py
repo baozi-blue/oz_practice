@@ -13,9 +13,10 @@ import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from banking_system.services.banking_service import BankingService
-from banking_system.utils.exceptions import InsufficientFundsError, NegativeAmountError, UserNotFoundError
-
+from services.banking_service import BankingService      # 수정: 상위 폴더명 삭제
+from utils.exceptions import InsufficientFundsError, NegativeAmountError, UserNotFoundError
+from models.account import Account
+from models.user import User
 
 if __name__ == "__main__":
     banking_service = BankingService()
@@ -29,7 +30,7 @@ if __name__ == "__main__":
 
         if choice == '1':
             username = input("사용자 이름을 입력하세요: ")
-            account = Account(0, [])  
+            account = Account(0, [])     # 위에 import 추가
             user = User(username, account)
             banking_service.add_user(user)
             print(f"{username} 사용자 추가 완료")

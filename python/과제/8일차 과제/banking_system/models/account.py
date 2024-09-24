@@ -14,9 +14,10 @@
 #- bank_name: 은행 이름을 나타내는 클래스 변수 문자열
 #- amount: 입금 또는 출금 금액을 나타내는 정수
 
-from banking_system.models.transaction import Transaction
-from banking_system.utils.decorators import validate_transaction
-from banking_system.utils.exceptions import InsufficientFundsError, NegativeAmountError
+
+from models.transaction import Transaction
+from utils.decorators import validate_transaction
+from utils.exceptions import InsufficientFundsError, NegativeAmountError
 
 class Account:
     bank_name = "신한은행"

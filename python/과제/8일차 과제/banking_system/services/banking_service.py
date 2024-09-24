@@ -14,8 +14,8 @@
 #- choice: 사용자의 선택을 나타내는 문자열
 
 
-from banking_system.models.user import User
-from banking_system.utils.exceptions import UserNotFoundError
+from models.user import User
+from utils.exceptions import UserNotFoundError
 
 class BankingService:
     def __init__(self) -> None:

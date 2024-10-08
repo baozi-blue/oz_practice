@@ -7,15 +7,15 @@
 -- VALUES (1000, 'Emma Wang', 'Emma', 'Wang', '303-303-303', '123 Main St', 'Seongnam', 'Gyeonggi-do', 12375, 'Korea');
 
 ## products
--- INSERT INTO products (customerNumber, customerName, contactFirstName, contactLastName, phone, addressLine1, city, state, postalCode, country) 
--- VALUES (1000, 'Emma Wang', 'Emma', 'Wang', '303-303-303', '123 Main St', 'Seongnam', 'Gyeonggi-do', 12375, 'Korea');
+-- INSERT INTO products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP) 
+-- VALUES ('S77_7777', 'Huge Cooper', 'Classic Cars', '1:30', 'BritishBull', 'Very huge vehicle with good quality', 3345, 90.08, 190.12);
 
 ## employees
--- INSERT INTO customers (customerNumber, customerName, contactFirstName, contactLastName, phone, addressLine1, city, state, postalCode, country) 
--- VALUES (1000, 'Emma Wang', 'Emma', 'Wang', '303-303-303', '123 Main St', 'Seongnam', 'Gyeonggi-do', 12375, 'Korea');
+-- INSERT INTO employees (employeeNumber, lastName, firstName, extension, email, officeCode, reportsTo, jobTitle) 
+-- VALUES ();
 
 ## offices
--- INSERT INTO employees (customerNumber, customerName, contactFirstName, contactLastName, phone, addressLine1, city, state, postalCode, country) 
+-- INSERT INTO offices (customerNumber, customerName, contactFirstName, contactLastName, phone, addressLine1, city, state, postalCode, country) 
 -- VALUES (1000, 'Emma Wang', 'Emma', 'Wang', '303-303-303', '123 Main St', 'Seongnam', 'Gyeonggi-do', 12375, 'Korea');
 
 ## orders

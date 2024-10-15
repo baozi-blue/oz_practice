@@ -9,15 +9,15 @@ def index():
         'title':'Flask Jinja Template',
         'user':'Emma',
         'is_admin':True,
-        'items':['Item1','Item2','Item3']
+        'item_list':['Item1','Item2','Item3']
     }
 
-    title = 'flask Jinja Template'
+    # title = 'flask Jinja Template'
 
     # ctrl+함수명 => 힘수에 대한 설명
     # (1) rendering할 html 파일명 입력
     # (2) html로 넘겨줄 데이터 입력
-    return render_template('index.html', data=data, title = title, is_admin=True)
+    return render_template('index.html', data=data)
 
 if __name__ == "__main__":
     app.run(debug=True)
